@@ -5,11 +5,16 @@
         public string FileName { get; set; }
         public string MyUserDir
         {
-            get => Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), FileName);
+            get => Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile));
         }
 
         public FileHandler(string fileName) => FileName = fileName;
-        public void CreateFile() => File.Create(MyUserDir);
+
+        public FileHandler()
+        {
+        }
+
+        public void CreateFile() => File.Create(Path.Combine(MyUserDir,FileName));
 
         //public bool CreateFile()
         //{

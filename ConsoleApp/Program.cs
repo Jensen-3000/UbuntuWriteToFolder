@@ -1,13 +1,45 @@
 ﻿using ConsoleApp;
 
-FileHandler fileHandler = new FileHandler("Niklas.txt");
 
-try
+
+Console.WriteLine("1. Opret fil");
+Console.WriteLine("2. Vis bruger folder URL");
+
+string input = Console.ReadLine();
+int inputValue;
+bool success = int.TryParse(input, out inputValue);
+
+while (!success)
 {
-    fileHandler.CreateFile();
-    Console.WriteLine("Success");
+    Console.WriteLine("Invalid Input. Prøv igen...");
+    Console.Write("Indtast et tal: ");
+    input = Console.ReadLine();
+    success = int.TryParse(input, out inputValue);
 }
-catch (Exception e)
+
+if (inputValue == 1)
 {
-    Console.WriteLine(e.Message);
+    OpretFil();
 }
+
+if (inputValue == 2)
+{
+    FileHandler fileHandler = new FileHandler();
+    Console.WriteLine(fileHandler.MyUserDir);
+}
+
+void OpretFil()
+{
+    FileHandler fileHandler = new FileHandler("Niklas.txt");
+
+    try
+    {
+        fileHandler.CreateFile();
+        Console.WriteLine("Success");
+    }
+    catch (Exception e)
+    {
+        Console.WriteLine(e.Message);
+    }
+}
+

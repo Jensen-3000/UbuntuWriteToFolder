@@ -1,9 +1,9 @@
 {
   "profiles": {
-    "ConsoleApp": {
+    "Windows OS": {
       "commandName": "Project"
     },
-    "WSL": {
+    "Linux OS": {
       "commandName": "WSL2",
       "distributionName": ""
     }
