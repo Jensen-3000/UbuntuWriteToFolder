@@ -1,5 +1,12 @@
 ﻿using ConsoleApp;
 
-FileHandler fileHandler = new FileHandler();
+FileHandler fileHandler = new FileHandler("Niklas.txt");
 
-fileHandler.CreateFile();
+try
+{
+    fileHandler.CreateFile();
+}
+catch (Exception e)
+{
+    Console.WriteLine(e.Message);
+}
