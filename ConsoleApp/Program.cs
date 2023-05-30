@@ -1,6 +1,8 @@
 ﻿using ConsoleApp;
 
 
+// ToDo bruger input for filename
+// ${fileName}.txt
 
 Console.WriteLine("1. Opret fil");
 Console.WriteLine("2. Vis bruger folder URL");
