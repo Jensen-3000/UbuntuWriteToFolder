@@ -2,6 +2,13 @@
 {
     internal class FileHandler
     {
+        public string MyUserDir { get => Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)) }
+
+        public FileHandler()
+        {
+
+            }
+
         public bool CreateFile()
         {
             bool success = true;
