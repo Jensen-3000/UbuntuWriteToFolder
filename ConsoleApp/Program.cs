@@ -1,9 +1,16 @@
 ﻿using ConsoleApp;
-using System.Security.Cryptography.X509Certificates;
 
 
 // ToDo bruger input for filename
 // ${fileName}.txt
+
+
+FileHandler fileHandler = new FileHandler();
+Console.WriteLine(fileHandler.MyUserDir);
+
+Thread.Sleep(5000);
+
+CountSeconds();
 
 Console.WriteLine("1. Opret fil");
 Console.WriteLine("2. Vis bruger folder URL");
@@ -27,7 +34,6 @@ if (inputValue == 1)
 
 if (inputValue == 2)
 {
-    FileHandler fileHandler = new FileHandler();
     Console.WriteLine(fileHandler.MyUserDir);
 }
 if (inputValue == 3)
