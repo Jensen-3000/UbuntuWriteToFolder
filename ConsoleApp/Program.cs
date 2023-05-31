@@ -1,4 +1,5 @@
 ﻿using ConsoleApp;
+using System.Security.Cryptography.X509Certificates;
 
 
 // ToDo bruger input for filename
@@ -29,6 +30,10 @@ if (inputValue == 2)
     FileHandler fileHandler = new FileHandler();
     Console.WriteLine(fileHandler.MyUserDir);
 }
+if (inputValue == 3)
+{
+    CountSeconds();
+}
 
 void OpretFil()
 {
@@ -45,3 +50,14 @@ void OpretFil()
     }
 }
 
+void CountSeconds()
+{
+    int y = 1;
+    while (true)
+    {
+        Console.Clear();
+        Console.WriteLine(y);
+        Thread.Sleep(1000);
+        y++;
+    }
+}

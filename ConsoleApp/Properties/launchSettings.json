@@ -6,6 +6,9 @@
     "Linux OS": {
       "commandName": "WSL2",
       "distributionName": ""
+    },
+    "Docker": {
+      "commandName": "Docker"
     }
   }
 }
