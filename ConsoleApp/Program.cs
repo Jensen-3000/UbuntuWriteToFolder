@@ -8,12 +8,11 @@
 FileHandler fileHandler = new FileHandler();
 Console.WriteLine(fileHandler.MyUserDir);
 
-Thread.Sleep(5000);
-
 CountSeconds();
 
 Console.WriteLine("1. Opret fil");
 Console.WriteLine("2. Vis bruger folder URL");
+Console.WriteLine("3. Tæller for hvert sekund");
 
 string input = Console.ReadLine();
 int inputValue;
