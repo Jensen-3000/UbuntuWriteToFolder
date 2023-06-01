@@ -1,14 +1,14 @@
 ﻿using ConsoleApp;
 
-
-// ToDo bruger input for filename
-// ${fileName}.txt
-
+#region Opgave 3
 
 FileHandler fileHandler = new FileHandler();
 Console.WriteLine(fileHandler.MyUserDir);
 
-CountSeconds();
+CountSeconds(); // Comment me out for opgave 2.
+#endregion
+
+#region Opgave 2
 
 Console.WriteLine("1. Opret fil");
 Console.WriteLine("2. Vis bruger folder URL");
@@ -18,6 +18,8 @@ string input = Console.ReadLine();
 int inputValue;
 bool success = int.TryParse(input, out inputValue);
 
+
+
 while (!success)
 {
     Console.WriteLine("Invalid Input. Prøv igen...");
@@ -25,24 +27,30 @@ while (!success)
     input = Console.ReadLine();
     success = int.TryParse(input, out inputValue);
 }
+#endregion
+
 
 if (inputValue == 1)
 {
-    OpretFil();
+    Console.WriteLine("Hvad skal filen hedde?:");
+    string filNavn = Console.ReadLine();
+    OpretFil(filNavn);
 }
 
 if (inputValue == 2)
 {
     Console.WriteLine(fileHandler.MyUserDir);
 }
+
 if (inputValue == 3)
 {
     CountSeconds();
 }
 
-void OpretFil()
+
+void OpretFil(string filnavn)
 {
-    FileHandler fileHandler = new FileHandler("Niklas.txt");
+    FileHandler fileHandler = new FileHandler($"{filnavn}.txt");
 
     try
     {
@@ -55,6 +63,7 @@ void OpretFil()
     }
 }
 
+
 void CountSeconds()
 {
     int y = 1;
@@ -66,3 +75,4 @@ void CountSeconds()
         y++;
     }
 }
+

@@ -16,6 +16,9 @@
 
         public void CreateFile() => File.Create(Path.Combine(MyUserDir,FileName));
 
+
+        #region Day 1 shenanigans
+
         //public bool CreateFile()
         //{
         //    bool success = true;
@@ -37,6 +40,6 @@
 
         //    return success;
         //}
-
+        #endregion
     }
 }
